@@ -1,0 +1,133 @@
+body{
+  background-image: url(assets/jollibee.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu-system {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fff6f2;
+  padding: 20px;
+  border: 5px solid #fdbf00;
+  border-radius: 10px;
+  width: 80%;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-system h1 {
+  color: #e31b23;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table th, table td {
+  border: 1px solid #fdbf00;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+table th {
+  background-color: #fdbf00;
+  color: #fff;
+  font-size: 20px;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #fff3e0;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #ffe5c3;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #fdbf00;
+  border-radius: 5px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.add-order-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e31b23;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-order-button:hover {
+  background-color: #c4171b;
+}
+
+.confirm-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e31b23;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.confirm-button:hover {
+  background-color: #c4171b;
+}
+
+.delete-order-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #e31b23;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-order-button:hover {
+  background-color: #c4171b;
+}
+
+ol {
+  list-style: decimal;
+  padding: 0;
+  margin: 20px auto;
+  width: 60%; 
+  text-align: center; 
+}
+
+ol li {
+  font-size: 18px;
+  margin: 10px 0;
+  background-color: #ffe5c3;
+  border: 1px solid #fdbf00;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block; 
+  width: 90%; 
+}
+
+h2 {
+  color: #e31b23;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
