@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 
 //Connection to MongoDB
 mongoose
-    .connect("mongodb+srv://arylmatheous22:Lorraine09193042925@express-dsa-project.vxybs.mongodb.net/", {
+    .connect("mongodb+srv://arylmatheous:%3Carylmatheous09193042925%3E@express-node-app.xwfnq.mongodb.net/", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -66,27 +66,27 @@ mongoose
         process.exit(1); //Exit if the database connection fails
     });
 
-//Middleware
-app.use(cors());
-app.use(express.json());
+// //Middleware
+// app.use(cors());
+// app.use(express.json());
 
-//Import API folder 
-const submitMenuSystem = require('./API/AddOrder');
+// //Import API folder 
+// const submitMenuSystem = require('./API/AddOrder');
 
-//Use API
-app.use("/AddOrder", submitMenuSystem);
+// //Use API
+// app.use("/AddOrder", submitMenuSystem);
 
-// // Start the server Microsoft Azure
-const PORT = process.env.PORT || 3000;
+// // // Start the server Microsoft Azure
+// const PORT = process.env.PORT || 3000;
 
-server .listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-}); 
+// server .listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+// }); 
 
 
 //Start the server
-// const PORT = 5000;
+const PORT = 5000;
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on http://localhost:${PORT}`)
-// });
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`)
+});
