@@ -55,16 +55,16 @@ app.get('/', (req, res) => {
 });
 
 //Connection to MongoDB
-mongoose
-    .connect("mongodb+srv://arylmatheous:%3Carylmatheous09193042925%3E@express-node-app.xwfnq.mongodb.net/", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => console.log("MongoDB Connected"))
-    .catch((error) => {
-        console.error("MongoDB Connection Error:", error.message);
-        process.exit(1); //Exit if the database connection fails
-    });
+// mongoose
+//     .connect("mongodb+srv://arylmatheous:%3Carylmatheous09193042925%3E@express-node-app.xwfnq.mongodb.net/", {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     })
+//     .then(() => console.log("MongoDB Connected"))
+//     .catch((error) => {
+//         console.error("MongoDB Connection Error:", error.message);
+//         process.exit(1); //Exit if the database connection fails
+//     });
 
 // //Middleware
 // app.use(cors());

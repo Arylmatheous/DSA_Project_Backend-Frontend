@@ -131,3 +131,45 @@ h2 {
   font-weight: bold;
   margin-top: 20px;
 }
+
+.dine-in-button {
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: #fdbf00;
+  color: #fff;
+  border: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.dine-in-button img {
+  width: 250px;   
+  height: 150px;  
+  margin: 10px;  
+}
+
+.dine-in-button:hover {
+  background-color: #c4171b;
+}
+
+.take-out-button {
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: #fdbf00;
+  color: #fff;
+  border: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.take-out-button img {
+  width: 250px;   
+  height: 150px;  
+  margin: 10px;  
+}
+
+.take-out-button:hover {
+  background-color: #c4171b;
+}

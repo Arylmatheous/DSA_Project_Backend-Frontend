@@ -1,11 +1,19 @@
 import React, {useState} from 'react';
+import dineIn from './assets/dine_in.png';
+import takeOut from './assets/takeout.png';
+
 
 function MenuSystem(){
 
     const [orders, setOrders] = useState([]);
     const [newOrders, setNewOrders] = useState("");
+    const [orderType, setOrderType] = useState(null);
 
     document.title = "Menu System";
+
+    function handleOrderType(type){
+        setOrderType(type);
+    }
 
     //this allow you to type a text in the input element
     function handleInputOrderChange(event){
@@ -78,99 +86,115 @@ function MenuSystem(){
     return(
     <div className = "menu-system">
 
-        <h1>Welcome to Jollibee!</h1>
-
-        <table>
-            <thead>
-                <th>Main Courses</th>
-                <th>Price</th>
-                <th>Desserts</th>
-                <th>Price</th>
-                <th>Drinks</th>
-                <th>Price</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Burger Steak</td>
-                    <td>₱60.00</td>
-                    <td>Chocolate Sundae</td>
-                    <td>₱52.00</td>
-                    <td>Coke</td>
-                    <td>₱61.00</td> 
-                </tr>
-                <tr>
-                    <td>ChickenJoy</td>
-                    <td>₱82.00</td>
-                    <td>Cookies & Cream Sundae</td>
-                    <td>₱59.00</td>
-                    <td>Coke Float</td>
-                    <td>₱59.00</td>
-                </tr>
-                <tr>
-                    <td>Fries</td>
-                    <td>₱47.00</td>
-                    <td>Mini Chocolate Sundae</td>
-                    <td>₱27.00</td>
-                    <td>Iced Latte</td>
-                    <td>₱59.00</td> 
-                </tr>
-                <tr>
-                    <td>Jolly Spaghetti</td>
-                    <td>₱69.00</td> 
-                    <td>Peach Mango Pie</td>
-                    <td>₱43.00</td> 
-                    <td>Iced Tea</td>
-                    <td>₱66.00</td> 
-                </tr>
-                <tr>
-                    <td>Yumburger</td>
-                    <td>₱40.00</td> 
-                    <td>Tuna Pie</td>
-                    <td>₱53.00</td> 
-                    <td>Pineapple Juice</td>
-                    <td>₱66.00</td> 
-                </tr>
-            </tbody>
-        </table>
-
-        <div>
-            <br></br>
-            <input 
-                type = "text" 
-                placeholder = "Enter your order" 
-                value = {newOrders} 
-                onChange = {handleInputOrderChange}>
-            </input>
-            <button 
-                className = "add-order-button"
-                onClick = {addOrder}>
-                Add Order
-            </button>
-
-            <h2>Your Orders: </h2>
-        </div>
-
-        <ol>
-            {orders.map((order, index) =>
-            <li key = {index}>
-                <span className = "text">{order}</span>
-                <button 
-                    className = "delete-order-button"
-                    onClick = {() => deleteOrder(index)}>
-                    Delete Order
+        {!orderType ? (
+            <div>
+                <h1>Welcome to Jollibee!</h1>
+                <p>Please select your order type:</p>
+                <button className = "dine-in-button" onClick = {() => handleOrderType("Dine-In")}>
+                    <img src={dineIn}></img>
+                    <br></br>
+                    Dine-In
                 </button>
-            </li>
-             )}
-        </ol>
+                <button className = "take-out-button"onClick = {() => handleOrderType("Take-Out")}>
+                    <img src={takeOut}></img>
+                    <br></br>
+                    Take-Out
+                </button>
+            </div>  
+        ) : ( 
+            <div>
+                <h1>Welcome to Jollibee!</h1>
+                <table>
+                     <thead>
+                        <th>Main Courses</th>
+                        <th>Price</th>
+                        <th>Desserts</th>
+                        <th>Price</th>
+                        <th>Drinks</th>
+                        <th>Price</th>
+                    </thead>
+                <tbody>
+                    <tr>
+                        <td>Burger Steak</td>
+                        <td>₱60.00</td>
+                        <td>Chocolate Sundae</td>
+                        <td>₱52.00</td>
+                        <td>Coke</td>
+                        <td>₱61.00</td> 
+                    </tr>
+                    <tr>
+                        <td>ChickenJoy</td>
+                        <td>₱82.00</td>
+                        <td>Cookies & Cream Sundae</td>
+                        <td>₱59.00</td>
+                        <td>Coke Float</td>
+                        <td>₱59.00</td>
+                    </tr>
+                    <tr>
+                        <td>Fries</td>
+                        <td>₱47.00</td>
+                        <td>Mini Chocolate Sundae</td>
+                        <td>₱27.00</td>
+                        <td>Iced Latte</td>
+                        <td>₱59.00</td> 
+                    </tr>
+                    <tr>
+                        <td>Jolly Spaghetti</td>
+                        <td>₱69.00</td> 
+                        <td>Peach Mango Pie</td>
+                        <td>₱43.00</td> 
+                        <td>Iced Tea</td>
+                        <td>₱66.00</td> 
+                    </tr>
+                    <tr>
+                        <td>Yumburger</td>
+                        <td>₱40.00</td> 
+                        <td>Tuna Pie</td>
+                        <td>₱53.00</td> 
+                        <td>Pineapple Juice</td>
+                        <td>₱66.00</td> 
+                    </tr>
+                </tbody>
+                </table>
+            <div>
+                <br></br>
+                <input 
+                    type = "text" 
+                    placeholder = "Enter your order" 
+                    value = {newOrders} 
+                    onChange = {handleInputOrderChange}>
+                </input>
+                <button 
+                    className = "add-order-button"
+                    onClick = {addOrder}>
+                    Add Order
+                </button>
 
-        <h2>Total Amount: ₱{calculateTotal()}.00</h2>
+                <h2>Your Orders: </h2>
+            </div>
 
+                <ol>
+                    {orders.map((order, index) =>
+                    <li key = {index}>
+                        <span className = "text">{order}</span>
+                        <button 
+                            className = "delete-order-button"
+                            onClick = {() => deleteOrder(index)}>
+                            Delete Order
+                        </button>
+                    </li>
+                    )}
+                </ol>
 
-        <button
-            className = "confirm-button"
-            onClick = {handleFinishOrder}>
-            Confirm Order
-        </button>
+                <h2>Total Amount: ₱{calculateTotal()}.00</h2>
+
+                <button
+                    className = "confirm-button"
+                    onClick = {handleFinishOrder}>
+                    Confirm Order
+                </button>
+            </div>
+        )} 
     </div>)
 }
 
